@@ -7,19 +7,17 @@
     <meta name="description" content="AscendOS AI is a transformational AI platform helping ambitious students master learning, productivity, health, research, and career growth.">
     <script src="https://cdn.tailwindcss.com">
     </script>
-    <script src="https://unpkg.com/@lucide/web@latest">
-    </script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js">
     </script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js">
     </script>
-    <script src="https://unpkg.com/framer-motion@10/dist/framer-motion.js">
+    <script src="https://unpkg.com/framer-motion@10.18.0/dist/framer-motion.js">
     </script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js">
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -27,22 +25,15 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
                         display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
                         brand: {
-                            50: '#eef5ff',
-                            100: '#d9e8ff',
-                            200: '#bcd6ff',
-                            300: '#8ebaff',
-                            400: '#5894ff',
+                            400: '#5888ff',
                             500: '#3366ff',
-                            600: '#1a40f5',
-                            700: '#1430e1',
-                            800: '#1629b6',
-                            900: '#18278f',
-                            950: '#131957',
+                            600: '#1a45f0',
+                            700: '#1430d6',
                         },
                         accent: {
                             400: '#a78bfa',
@@ -51,43 +42,35 @@
                         },
                     },
                     animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-delayed': 'float 6s ease-in-out 2s infinite',
-                        'float-slow': 'float 8s ease-in-out 1s infinite',
-                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-                        'orbit': 'orbit 20s linear infinite',
-                        'orbit-reverse': 'orbit 25s linear infinite reverse',
-                        'drift': 'drift 15s ease-in-out infinite',
-                        'shimmer': 'shimmer 2s linear infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'float': 'float 7s ease-in-out infinite',
+                        'float-delay': 'float 7s ease-in-out 3s infinite',
+                        'float-slow': 'float 9s ease-in-out 1s infinite',
+                        'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite',
+                        'drift': 'drift 20s ease-in-out infinite',
+                        'drift-slow': 'drift 25s ease-in-out infinite reverse',
+                        'shimmer': 'shimmer 3s linear infinite',
                         'gradient-shift': 'gradientShift 8s ease-in-out infinite',
+                        'spin-slow': 'spin 30s linear infinite',
                     },
                     keyframes: {
                         float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
+                            '0%, 100%': { transform: 'translateY(0px) scale(1)' },
+                            '33%': { transform: 'translateY(-18px) scale(1.02)' },
+                            '66%': { transform: 'translateY(8px) scale(0.98)' },
                         },
                         pulseGlow: {
-                            '0%, 100%': { opacity: '0.6', boxShadow: '0 0 20px rgba(51,102,255,0.3)' },
-                            '50%': { opacity: '1', boxShadow: '0 0 60px rgba(51,102,255,0.7)' },
-                        },
-                        orbit: {
-                            '0%': { transform: 'rotate(0deg) translateX(150px) rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg) translateX(150px) rotate(-360deg)' },
+                            '0%, 100%': { opacity: '0.5', boxShadow: '0 0 30px rgba(51,102,255,0.3)' },
+                            '50%': { opacity: '1', boxShadow: '0 0 70px rgba(51,102,255,0.7), 0 0 120px rgba(139,92,246,0.3)' },
                         },
                         drift: {
                             '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-                            '25%': { transform: 'translate(30px, -20px) scale(1.05)' },
-                            '50%': { transform: 'translate(-15px, 25px) scale(0.95)' },
-                            '75%': { transform: 'translate(-25px, -15px) scale(1.02)' },
+                            '25%': { transform: 'translate(40px, -25px) scale(1.06)' },
+                            '50%': { transform: 'translate(-20px, 30px) scale(0.94)' },
+                            '75%': { transform: 'translate(-35px, -15px) scale(1.03)' },
                         },
                         shimmer: {
-                            '0%': { backgroundPosition: '-200% 0' },
-                            '100%': { backgroundPosition: '200% 0' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                            '0%': { backgroundPosition: '-300% 0' },
+                            '100%': { backgroundPosition: '300% 0' },
                         },
                         gradientShift: {
                             '0%, 100%': { backgroundPosition: '0% 50%' },
@@ -100,86 +83,147 @@
     </script>
     <style>
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #0f0f1a;
-            --glass-bg: rgba(15, 15, 30, 0.6);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-highlight: rgba(255, 255, 255, 0.03);
-            --text-primary: #f0f0f5;
-            --text-secondary: #a0a0b8;
-            --accent-glow: #3366ff;
+            --bg-deep: #04040d;
+            --bg-primary: #08081a;
+            --bg-card: rgba(12, 12, 30, 0.65);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-glow: rgba(255, 255, 255, 0.14);
+            --text-primary: #eeeef5;
+            --text-secondary: #9a9ab8;
+            --accent-blue: #3366ff;
             --accent-purple: #8b5cf6;
+            --accent-cyan: #22d3ee;
         }
 
         * {
-            scroll-behavior: smooth;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            background: var(--bg-deep);
+        }
+
         body {
-            background: var(--bg-primary);
+            margin: 0;
+            padding: 0;
+            background: var(--bg-deep);
             color: var(--text-primary);
             font-family: 'Inter', system-ui, sans-serif;
-            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            cursor: default;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--bg-primary);
+            background: var(--bg-deep);
         }
         ::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.18);
         }
 
-        /* Glassmorphism utility */
         .glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(40px) saturate(180%);
-            -webkit-backdrop-filter: blur(40px) saturate(180%);
-            border: 1px solid var(--glass-border);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--glass-highlight);
+            background: var(--bg-card);
+            backdrop-filter: blur(50px) saturate(180%);
+            -webkit-backdrop-filter: blur(50px) saturate(180%);
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
         }
 
         .glass-strong {
-            background: rgba(20, 20, 40, 0.75);
-            backdrop-filter: blur(60px) saturate(200%);
-            -webkit-backdrop-filter: blur(60px) saturate(200%);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            background: rgba(16, 16, 38, 0.78);
+            backdrop-filter: blur(70px) saturate(200%);
+            -webkit-backdrop-filter: blur(70px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.04);
         }
 
-        /* Glow effects */
         .glow-blue {
-            box-shadow: 0 0 40px rgba(51, 102, 255, 0.25), 0 0 80px rgba(51, 102, 255, 0.1);
+            box-shadow: 0 0 50px rgba(51, 102, 255, 0.2), 0 0 100px rgba(51, 102, 255, 0.08);
         }
         .glow-purple {
-            box-shadow: 0 0 40px rgba(139, 92, 246, 0.25), 0 0 80px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.2), 0 0 100px rgba(139, 92, 246, 0.08);
         }
         .glow-text {
-            text-shadow: 0 0 30px rgba(51, 102, 255, 0.5), 0 0 60px rgba(51, 102, 255, 0.25);
+            text-shadow: 0 0 40px rgba(51, 102, 255, 0.55), 0 0 80px rgba(139, 92, 246, 0.3);
         }
 
-        /* Animated grid background */
         .grid-bg {
             background-image:
-                linear-gradient(rgba(51, 102, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(51, 102, 255, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+                linear-gradient(rgba(51, 102, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(51, 102, 255, 0.025) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 25%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 25%, transparent 70%);
         }
 
-        /* Particle canvas */
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.22;
+            pointer-events: none;
+            z-index: 0;
+            will-change: transform;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #5888ff, #8b5cf6, #a78bfa, #5888ff);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        .gradient-text-warm {
+            background: linear-gradient(135deg, #f59e0b, #f97316, #f59e0b);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+        }
+
+        .hover-lift {
+            transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.45s ease, border-color 0.45s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 28px 56px rgba(0, 0, 0, 0.55), 0 0 70px rgba(51, 102, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .shimmer-border {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-border::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            background: linear-gradient(115deg,
+                    transparent 25%,
+                    rgba(51, 102, 255, 0.5) 40%,
+                    rgba(139, 92, 246, 0.5) 55%,
+                    transparent 70%);
+            background-size: 250% 100%;
+            animation: shimmer 3s linear infinite;
+            z-index: -1;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
         #particles-canvas {
             position: fixed;
             top: 0;
@@ -190,129 +234,86 @@
             z-index: 0;
         }
 
-        /* Gradient orb */
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.3;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Spotlight hover effect */
-        .spotlight-card {
-            position: relative;
-            overflow: hidden;
-        }
-        .spotlight-card::before {
-            content: '';
-            position: absolute;
-            inset: -1px;
-            border-radius: inherit;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-                    rgba(51, 102, 255, 0.3) 0%,
-                    transparent 60%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .spotlight-card:hover::before {
-            opacity: 1;
-        }
-
-        /* Shimmer effect */
-        .shimmer-border {
-            position: relative;
-        }
-        .shimmer-border::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: inherit;
-            background: linear-gradient(120deg,
-                    transparent 30%,
-                    rgba(51, 102, 255, 0.4) 45%,
-                    rgba(139, 92, 246, 0.4) 55%,
-                    transparent 70%);
-            background-size: 200% 100%;
-            animation: shimmer 3s linear infinite;
-            z-index: -1;
-            opacity: 0.6;
-        }
-
-        /* Gradient text */
-        .gradient-text {
-            background: linear-gradient(135deg, #3366ff, #8b5cf6, #a78bfa, #3366ff);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 8s ease-in-out infinite;
-        }
-
-        .gradient-text-warm {
-            background: linear-gradient(135deg, #f59e0b, #ef4444, #f59e0b);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 6s ease-in-out infinite;
-        }
-
-        /* Card hover lift */
-        .hover-lift {
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.4s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), 0 0 60px rgba(51, 102, 255, 0.2);
-        }
-
-        /* Stat counter */
-        .stat-number {
-            font-variant-numeric: tabular-nums;
-            font-feature-settings: "tnum";
-            letter-spacing: -0.02em;
-        }
-
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .orb {
-                filter: blur(80px);
-                opacity: 0.2;
+                filter: blur(90px);
+                opacity: 0.14;
             }
             .glass {
-                backdrop-filter: blur(20px);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+            }
+            .glass-strong {
+                backdrop-filter: blur(35px);
+                -webkit-backdrop-filter: blur(35px);
             }
         }
     </style>
 </head>
-<body class="bg-[#0a0a0f] text-[#f0f0f5] min-h-screen">
+<body>
     <div id="root"></div>
-
-    <!-- Particle Canvas -->
     <canvas id="particles-canvas"></canvas>
 
     <script type="text/babel">
-        const { useState, useEffect, useRef, useCallback, useMemo } = React;
-        const { motion, AnimatePresence, useScroll, useTransform, useSpring, useInView, useAnimation } = FramerMotion;
+        const { useState, useEffect, useRef, useCallback, useMemo, createContext, useContext } = React;
+        const {
+            motion,
+            AnimatePresence,
+            useScroll,
+            useTransform,
+            useSpring,
+            useInView,
+            useAnimation,
+            LayoutGroup,
+            LazyMotion,
+            domAnimation,
+            m
+        } = FramerMotion;
+
+        // ========================================
+        // UTILITY: Count Up Animation
+        // ========================================
+        const useCountUp = (target, duration = 2000, startCounting = true) => {
+            const [count, setCount] = useState(0);
+            const [hasAnimated, setHasAnimated] = useState(false);
+
+            useEffect(() => {
+                if (!startCounting || hasAnimated) return;
+                setHasAnimated(true);
+                const steps = 60;
+                const increment = target / steps;
+                const stepDuration = duration / steps;
+                let current = 0;
+                let step = 0;
+                const interval = setInterval(() => {
+                    step++;
+                    current += increment;
+                    if (step >= steps) {
+                        setCount(target);
+                        clearInterval(interval);
+                    } else {
+                        setCount(Math.floor(current));
+                    }
+                }, stepDuration);
+                return () => clearInterval(interval);
+            }, [target, duration, startCounting, hasAnimated]);
+
+            return count;
+        };
 
         // ========================================
         // PARTICLE SYSTEM
         // ========================================
         const ParticleCanvas = () => {
             const canvasRef = useRef(null);
-            const mouseRef = useRef({ x: 0, y: 0 });
+            const mouseRef = useRef({ x: -1000, y: -1000 });
             const particlesRef = useRef([]);
+            const animRef = useRef(null);
 
             useEffect(() => {
                 const canvas = canvasRef.current;
                 if (!canvas) return;
                 const ctx = canvas.getContext('2d');
-                let animationId;
                 let w, h;
 
                 const resize = () => {
@@ -322,75 +323,72 @@
                 resize();
                 window.addEventListener('resize', resize);
 
-                // Create particles
-                const createParticles = () => {
-                    const count = Math.min(Math.floor((w * h) / 12000), 200);
-                    particlesRef.current = Array.from({ length: count }, () => ({
-                        x: Math.random() * w,
-                        y: Math.random() * h,
-                        size: Math.random() * 1.8 + 0.4,
-                        speedX: (Math.random() - 0.5) * 0.3,
-                        speedY: (Math.random() - 0.5) * 0.3,
-                        opacity: Math.random() * 0.5 + 0.15,
-                        pulse: Math.random() * Math.PI * 2,
-                        pulseSpeed: Math.random() * 0.02 + 0.005,
-                    }));
-                };
-                createParticles();
+                const count = Math.min(Math.floor((w * h) / 10000), 220);
+                particlesRef.current = Array.from({ length: count }, () => ({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    size: Math.random() * 1.6 + 0.3,
+                    speedX: (Math.random() - 0.5) * 0.25,
+                    speedY: (Math.random() - 0.5) * 0.25,
+                    opacity: Math.random() * 0.45 + 0.1,
+                    pulse: Math.random() * Math.PI * 2,
+                    pulseSpeed: Math.random() * 0.015 + 0.004,
+                }));
 
                 const animate = () => {
                     ctx.clearRect(0, 0, w, h);
                     const particles = particlesRef.current;
+                    const mx = mouseRef.current.x;
+                    const my = mouseRef.current.y;
 
                     particles.forEach((p) => {
                         p.x += p.speedX;
                         p.y += p.speedY;
                         p.pulse += p.pulseSpeed;
 
-                        // Wrap around
-                        if (p.x < -20) p.x = w + 20;
-                        if (p.x > w + 20) p.x = -20;
-                        if (p.y < -20) p.y = h + 20;
-                        if (p.y > h + 20) p.y = -20;
+                        if (p.x < -30) p.x = w + 30;
+                        if (p.x > w + 30) p.x = -30;
+                        if (p.y < -30) p.y = h + 30;
+                        if (p.y > h + 30) p.y = -30;
 
-                        // Mouse attraction
-                        const dx = mouseRef.current.x - p.x;
-                        const dy = mouseRef.current.y - p.y;
+                        const dx = mx - p.x;
+                        const dy = my - p.y;
                         const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < 200) {
-                            const force = (200 - dist) / 200 * 0.02;
-                            p.speedX += dx * force * 0.01;
-                            p.speedY += dy * force * 0.01;
+                        if (dist < 180 && mx > 0) {
+                            const force = (180 - dist) / 180 * 0.015;
+                            p.speedX += dx * force * 0.008;
+                            p.speedY += dy * force * 0.008;
                         }
 
-                        // Damping
                         p.speedX *= 0.999;
                         p.speedY *= 0.999;
 
-                        const alpha = p.opacity + Math.sin(p.pulse) * 0.2;
-                        ctx.fillStyle = `rgba(120,160,255,${Math.max(0.05, alpha)})`;
+                        const alpha = p.opacity + Math.sin(p.pulse) * 0.18;
+                        const finalAlpha = Math.max(0.03, Math.min(0.7, alpha));
+
+                        ctx.fillStyle = `rgba(130,160,240,${finalAlpha})`;
                         ctx.beginPath();
                         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
                         ctx.fill();
 
-                        // Subtle glow on some particles
-                        if (p.size > 1.2) {
-                            ctx.fillStyle = `rgba(139,92,246,${Math.max(0.02, alpha * 0.5)})`;
+                        if (p.size > 1) {
+                            ctx.fillStyle = `rgba(160,130,240,${finalAlpha * 0.4})`;
                             ctx.beginPath();
-                            ctx.arc(p.x, p.y, p.size * 3, 0, Math.PI * 2);
+                            ctx.arc(p.x, p.y, p.size * 3.5, 0, Math.PI * 2);
                             ctx.fill();
                         }
                     });
 
-                    // Draw connections
+                    // Connections
                     for (let i = 0; i < particles.length; i++) {
                         for (let j = i + 1; j < particles.length; j++) {
                             const dx = particles[i].x - particles[j].x;
                             const dy = particles[i].y - particles[j].y;
                             const dist = Math.sqrt(dx * dx + dy * dy);
-                            if (dist < 100) {
-                                ctx.strokeStyle = `rgba(100,140,255,${0.04 * (1 - dist / 100)})`;
-                                ctx.lineWidth = 0.5;
+                            if (dist < 95) {
+                                const lineAlpha = 0.035 * (1 - dist / 95);
+                                ctx.strokeStyle = `rgba(120,150,240,${lineAlpha})`;
+                                ctx.lineWidth = 0.4;
                                 ctx.beginPath();
                                 ctx.moveTo(particles[i].x, particles[i].y);
                                 ctx.lineTo(particles[j].x, particles[j].y);
@@ -399,19 +397,26 @@
                         }
                     }
 
-                    animationId = requestAnimationFrame(animate);
+                    animRef.current = requestAnimationFrame(animate);
                 };
                 animate();
 
                 const handleMouse = (e) => {
                     mouseRef.current = { x: e.clientX, y: e.clientY };
                 };
+                const handleTouch = (e) => {
+                    if (e.touches.length > 0) {
+                        mouseRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+                    }
+                };
                 window.addEventListener('mousemove', handleMouse);
+                window.addEventListener('touchmove', handleTouch);
 
                 return () => {
-                    cancelAnimationFrame(animationId);
+                    cancelAnimationFrame(animRef.current);
                     window.removeEventListener('resize', resize);
                     window.removeEventListener('mousemove', handleMouse);
+                    window.removeEventListener('touchmove', handleTouch);
                 };
             }, []);
 
@@ -423,145 +428,160 @@
         // ========================================
         const FloatingOrbs = () => (
             <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-                <div className="orb w-[500px] h-[500px] bg-blue-500/20 top-[-10%] left-[-5%] animate-drift"
-                style={{animationDuration: '18s'}}></div>
-                <div className="orb w-[400px] h-[400px] bg-purple-500/15 top-[40%] right-[-8%] animate-drift"
-                style={{animationDuration: '22s', animationDelay: '-5s'}}></div>
-                <div className="orb w-[350px] h-[350px] bg-indigo-500/12 bottom-[-5%] left-[20%] animate-drift"
-                style={{animationDuration: '20s', animationDelay: '-10s'}}></div>
-                <div className="orb w-[300px] h-[300px] bg-cyan-500/10 top-[60%] left-[50%] animate-drift"
-                style={{animationDuration: '25s', animationDelay: '-3s'}}></div>
-                <div className="orb w-[250px] h-[250px] bg-violet-500/12 top-[20%] right-[25%] animate-drift"
-                style={{animationDuration: '16s', animationDelay: '-8s'}}></div>
+                <div className="orb w-[550px] h-[550px] bg-blue-500/18 top-[-8%] left-[-6%] animate-drift"
+                style={{ animationDuration: '19s' }}></div>
+                <div className="orb w-[420px] h-[420px] bg-purple-500/14 top-[38%] right-[-7%] animate-drift-slow"
+                style={{ animationDuration: '23s' }}></div>
+                <div className="orb w-[380px] h-[380px] bg-indigo-500/11 bottom-[-6%] left-[18%] animate-drift"
+                style={{ animationDuration: '21s', animationDelay: '-6s' }}></div>
+                <div className="orb w-[320px] h-[320px] bg-cyan-500/9 top-[55%] left-[48%] animate-drift-slow"
+                style={{ animationDuration: '26s', animationDelay: '-10s' }}></div>
+                <div className="orb w-[260px] h-[260px] bg-violet-500/10 top-[18%] right-[22%] animate-drift"
+                style={{ animationDuration: '17s', animationDelay: '-4s' }}></div>
             </div>
         );
 
         // ========================================
-        // MOUSE GLOW FOLLOWER
+        // MOUSE GLOW
         // ========================================
         const MouseGlow = () => {
-            const [pos, setPos] = useState({ x: -500, y: -500 });
-            const glowRef = useRef(null);
+            const [pos, setPos] = useState({ x: -600, y: -600 });
+            const rafRef = useRef(null);
 
             useEffect(() => {
                 const handleMouse = (e) => {
-                    setPos({ x: e.clientX, y: e.clientY });
+                    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+                    rafRef.current = requestAnimationFrame(() => {
+                        setPos({ x: e.clientX, y: e.clientY });
+                    });
                 };
                 window.addEventListener('mousemove', handleMouse);
-                return () => window.removeEventListener('mousemove', handleMouse);
+                return () => {
+                    window.removeEventListener('mousemove', handleMouse);
+                    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+                };
             }, []);
+
+            const isVisible = pos.x > -200;
 
             return (
                 <div
-                    ref={glowRef}
-                    className="fixed pointer-events-none z-[1] transition-opacity duration-500"
+                    className="fixed pointer-events-none z-[1] transition-opacity duration-600"
                     style={{
-                        left: pos.x - 200,
-                        top: pos.y - 200,
-                        width: 400,
-                        height: 400,
-                        background: 'radial-gradient(circle, rgba(51,102,255,0.06) 0%, rgba(139,92,246,0.03) 35%, transparent 70%)',
+                        left: pos.x - 220,
+                        top: pos.y - 220,
+                        width: 440,
+                        height: 440,
+                        background: 'radial-gradient(circle, rgba(51,102,255,0.07) 0%, rgba(139,92,246,0.035) 30%, transparent 65%)',
                         borderRadius: '50%',
-                        opacity: pos.x > 0 ? 1 : 0,
+                        opacity: isVisible ? 1 : 0,
+                        transition: 'opacity 0.6s ease',
                     }}
                 />
             );
         };
 
         // ========================================
-        // NAVIGATION
+        // NAVBAR
         // ========================================
         const Navbar = () => {
             const [scrolled, setScrolled] = useState(false);
             const [mobileOpen, setMobileOpen] = useState(false);
 
             useEffect(() => {
-                const handleScroll = () => setScrolled(window.scrollY > 30);
-                window.addEventListener('scroll', handleScroll);
+                const handleScroll = () => setScrolled(window.scrollY > 40);
+                window.addEventListener('scroll', handleScroll, { passive: true });
                 return () => window.removeEventListener('scroll', handleScroll);
             }, []);
 
-            const navLinks = ['Features', 'Dashboard', 'Gamification', 'Vision', 'Pricing'];
+            const links = ['Features', 'Dashboard', 'Gamification', 'Vision'];
 
             return (
                 <motion.nav
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.6, ease: 'easeOut' }}
+                    transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-                        scrolled
-                        ? 'glass-strong py-3 shadow-2xl'
-                        : 'bg-transparent py-5'
+                        scrolled ? 'glass-strong py-3' : 'bg-transparent py-5'
                     }`}
                 >
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-                        {/* Logo */}
-                        <a href="#" className="flex items-center gap-2.5 group">
-                            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/40 transition-shadow">
-                                <span className="text-white font-bold text-lg font-display">A</span>
+                    <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 flex items-center justify-between">
+                        <a href="#" className="flex items-center gap-2.5 group flex-shrink-0">
+                            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/25 group-hover:shadow-blue-500/45 transition-shadow duration-300">
+                                <span className="text-white font-bold text-lg font-display tracking-tight">A</span>
                             </div>
-                            <span className="text-lg font-bold font-display tracking-tight">
+                            <span className="text-lg font-bold font-display tracking-tight whitespace-nowrap">
                                 <span className="text-white">Ascend</span>
                                 <span className="gradient-text font-extrabold">OS</span>
-                                <span className="text-[10px] ml-1 px-1.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-mono font-semibold align-super">AI</span>
+                                <span className="text-[9px] ml-1 px-1.5 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-mono font-semibold align-super">AI</span>
                             </span>
                         </a>
 
-                        {/* Desktop Links */}
                         <div className="hidden md:flex items-center gap-8">
-                            {navLinks.map((link) => (
+                            {links.map((link) => (
                                 <a
                                     key={link}
                                     href={`#${link.toLowerCase()}`}
-                                    className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative group"
+                                    className="text-sm font-medium text-gray-400 hover:text-white transition-colors relative group py-1"
                                 >
                                     {link}
-                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300 rounded-full"></span>
+                                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-350 rounded-full"></span>
                                 </a>
                             ))}
                         </div>
 
-                        {/* CTA */}
-                        <div className="hidden md:flex items-center gap-3">
-                            <button className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                        <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+                            <button className="px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-colors rounded-lg">
                                 Sign In
                             </button>
-                            <button className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 active:scale-95">
+                            <button className="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 active:scale-[0.97] transform">
                                 Start Free →
                             </button>
                         </div>
 
-                        {/* Mobile Toggle */}
                         <button
-                            className="md:hidden p-2 text-gray-400 hover:text-white"
+                            className="md:hidden p-2 text-gray-400 hover:text-white transition-colors"
                             onClick={() => setMobileOpen(!mobileOpen)}
+                            aria-label="Toggle menu"
                         >
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
                                 {mobileOpen ? (
-                                    <path d="M18 6L6 18M6 6l12 12" />
+                                    <>
+                                        <line x1="18" y1="6" x2="6" y2="18" />
+                                        <line x1="6" y1="6" x2="18" y2="18" />
+                                    </>
                                 ) : (
-                                    <path d="M3 12h18M3 6h18M3 18h18" />
+                                    <>
+                                        <line x1="3" y1="12" x2="21" y2="12" />
+                                        <line x1="3" y1="6" x2="21" y2="6" />
+                                        <line x1="3" y1="18" x2="21" y2="18" />
+                                    </>
                                 )}
                             </svg>
                         </button>
                     </div>
 
-                    {/* Mobile Menu */}
                     <AnimatePresence>
                         {mobileOpen && (
                             <motion.div
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: 'auto' }}
                                 exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.3 }}
                                 className="md:hidden glass-strong mx-4 mt-3 rounded-2xl overflow-hidden"
                             >
-                                <div className="p-6 flex flex-col gap-4">
-                                    {navLinks.map((link) => (
-                                        <a key={link} href={`#${link.toLowerCase()}`} className="text-gray-300 hover:text-white py-2 transition-colors">
+                                <div className="p-5 flex flex-col gap-3">
+                                    {links.map((link) => (
+                                        <a
+                                            key={link}
+                                            href={`#${link.toLowerCase()}`}
+                                            className="text-gray-300 hover:text-white py-2.5 transition-colors text-sm font-medium"
+                                            onClick={() => setMobileOpen(false)}
+                                        >
                                             {link}
                                         </a>
                                     ))}
-                                    <button className="mt-2 px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl">
+                                    <button className="mt-2 px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl w-full text-center">
                                         Start Free →
                                     </button>
                                 </div>
@@ -573,19 +593,19 @@
         };
 
         // ========================================
-        // SECTION WRAPPER WITH SCROLL ANIMATION
+        // SCROLL REVEAL WRAPPER
         // ========================================
-        const SectionWrapper = ({ children, id, className = '' }) => {
+        const SectionWrapper = ({ children, id, className = '', delay = 0 }) => {
             const ref = useRef(null);
-            const isInView = useInView(ref, { once: true, margin: '-100px' });
+            const isInView = useInView(ref, { once: true, margin: '-80px' });
 
             return (
                 <motion.section
                     ref={ref}
                     id={id}
-                    initial={{ opacity: 0, y: 60 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                    transition={{ duration: 0.75, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className={`relative z-10 ${className}`}
                 >
                     {children}
@@ -597,50 +617,36 @@
         // HERO SECTION
         // ========================================
         const HeroSection = () => {
-            const [activeUsers, setActiveUsers] = useState(0);
-            const targetUsers = 128427;
-
-            useEffect(() => {
-                const duration = 2000;
-                const steps = 60;
-                const increment = targetUsers / steps;
-                let current = 0;
-                const interval = setInterval(() => {
-                    current += increment;
-                    if (current >= targetUsers) {
-                        setActiveUsers(targetUsers);
-                        clearInterval(interval);
-                    } else {
-                        setActiveUsers(Math.floor(current));
-                    }
-                }, duration / steps);
-                return () => clearInterval(interval);
-            }, []);
+            const userCount = useCountUp(128427, 2200);
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true });
 
             return (
-                <section className="relative min-h-screen flex items-center justify-center pt-20 pb-16 overflow-hidden z-10">
-                    {/* Grid background */}
+                <section ref={ref} className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden z-10">
                     <div className="absolute inset-0 grid-bg z-0"></div>
 
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 text-center relative z-10 w-full">
                         {/* Badge */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 25, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
                             transition={{ delay: 0.1, duration: 0.6 }}
                             className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full mb-8 shimmer-border"
                         >
-                            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-glow"></span>
+                            <span className="relative flex h-2.5 w-2.5">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+                            </span>
                             <span className="text-sm text-gray-300 font-medium">Now in Public Beta</span>
-                            <span className="text-xs text-gray-500 font-mono">v2.4.1</span>
+                            <span className="text-xs text-gray-500 font-mono bg-white/5 px-1.5 py-0.5 rounded">v2.4.1</span>
                         </motion.div>
 
                         {/* Headline */}
                         <motion.h1
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 35 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.8 }}
-                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-display tracking-tight leading-[1.05] mb-6"
+                            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-display tracking-tight leading-[1.04] mb-6"
                         >
                             <span className="text-white">Build Your Future</span>
                             <br />
@@ -649,29 +655,33 @@
 
                         {/* Subheadline */}
                         <motion.p
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 25 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4, duration: 0.7 }}
                             className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
                         >
-                            The AI Operating System for elite students. Master learning, productivity,
-                            health, research, and career growth — all powered by advanced artificial intelligence.
+                            A transformational AI platform helping elite students master learning,
+                            productivity, health, research, and career growth.
                         </motion.p>
 
-                        {/* CTA Buttons */}
+                        {/* CTAs */}
                         <motion.div
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 25 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6, duration: 0.7 }}
+                            transition={{ delay: 0.55, duration: 0.7 }}
                             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
                         >
-                            <button className="px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 rounded-2xl hover:from-blue-500 hover:via-blue-400 hover:to-purple-500 transition-all shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 active:scale-95 transform hover:-translate-y-0.5 w-full sm:w-auto">
-                                Start Free — It's Elite
-                                <span className="ml-2">→</span>
+                            <button className="group px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-purple-600 rounded-2xl hover:from-blue-500 hover:via-blue-400 hover:to-purple-500 transition-all shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/55 active:scale-[0.96] transform hover:-translate-y-0.5 w-full sm:w-auto relative overflow-hidden">
+                                <span className="relative z-10 flex items-center justify-center gap-2">
+                                    Start Free — It's Elite
+                                    <span className="group-hover:translate-x-1 transition-transform">→</span>
+                                </span>
                             </button>
-                            <button className="px-8 py-4 text-base font-semibold text-gray-300 glass rounded-2xl hover:text-white hover:border-gray-600 transition-all w-full sm:w-auto flex items-center justify-center gap-2">
-                                <span className="w-6 h-6 rounded-full border-2 border-gray-400 flex items-center justify-center">
-                                    <span className="text-[10px]">▶</span>
+                            <button className="px-8 py-4 text-base font-semibold text-gray-300 glass rounded-2xl hover:text-white hover:border-white/20 transition-all w-full sm:w-auto flex items-center justify-center gap-2.5 active:scale-[0.97]">
+                                <span className="w-7 h-7 rounded-full border-2 border-gray-500 flex items-center justify-center group-hover:border-white transition-colors">
+                                    <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" className="text-gray-400 ml-0.5">
+                                        <path d="M0 0L10 6L0 12V0Z" />
+                                    </svg>
                                 </span>
                                 Watch Demo
                             </button>
@@ -681,96 +691,101 @@
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: 0.9, duration: 0.8 }}
-                            className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm text-gray-500"
+                            transition={{ delay: 0.85, duration: 0.8 }}
+                            className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 text-sm text-gray-500 mb-12"
                         >
                             <div className="flex items-center gap-2">
                                 <div className="flex -space-x-2">
-                                    {['MIT', 'Stanford', 'Harvard', 'Oxford'].map((u, i) => (
-                                        <div key={u} className="w-7 h-7 rounded-full bg-gray-700 border-2 border-[#0a0a0f] flex items-center justify-center text-[9px] font-bold text-gray-300"
-                                        style={{zIndex: 4-i}}>
-                                            {u[0]}
+                                    {['M', 'S', 'H', 'O'].map((letter, i) => (
+                                        <div key={i} className="w-7 h-7 rounded-full bg-gray-700 border-2 border-[#04040d] flex items-center justify-center text-[10px] font-bold text-gray-300"
+                                        style={{ zIndex: 4 - i }}>
+                                            {letter}
                                         </div>
                                     ))}
                                 </div>
-                                <span>Trusted at top universities</span>
+                                <span className="text-gray-500">Trusted at elite universities</span>
                             </div>
-                            <span className="hidden sm:block text-gray-700">|</span>
+                            <span className="hidden sm:block text-gray-700">•</span>
                             <div className="flex items-center gap-1.5">
-                                <span className="stat-number text-white font-bold text-lg">
-                                    {activeUsers.toLocaleString()}+
+                                <span className="text-white font-bold text-lg font-mono tabular-nums">
+                                    {userCount.toLocaleString()}+
                                 </span>
-                                <span>active students</span>
+                                <span className="text-gray-500">active students</span>
                             </div>
-                            <span className="hidden sm:block text-gray-700">|</span>
-                            <div className="flex items-center gap-1.5">
-                                <span className="text-yellow-400">★★★★★</span>
-                                <span>4.9/5 rating</span>
+                            <span className="hidden sm:block text-gray-700">•</span>
+                            <div className="flex items-center gap-1">
+                                <span className="text-yellow-400 text-sm">★★★★★</span>
+                                <span className="text-gray-500">4.9/5</span>
                             </div>
                         </motion.div>
 
-                        {/* Floating Dashboard Preview */}
+                        {/* Dashboard Preview */}
                         <motion.div
-                            initial={{ opacity: 0, y: 60 }}
+                            initial={{ opacity: 0, y: 55 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 1.1, duration: 1 }}
-                            className="mt-16 relative max-w-4xl mx-auto"
+                            transition={{ delay: 1.0, duration: 0.9 }}
+                            className="relative max-w-4xl mx-auto"
                         >
-                            <div className="glass-strong rounded-3xl p-1 shadow-2xl glow-blue relative overflow-hidden">
-                                {/* Mock dashboard */}
-                                <div className="bg-[#0d0d1a] rounded-2xl p-4 sm:p-6">
+                            <div className="glass-strong rounded-3xl p-[2px] shadow-2xl glow-blue relative overflow-hidden">
+                                <div className="bg-[#0a0a18] rounded-[22px] p-4 sm:p-6">
                                     <div className="flex items-center gap-2 mb-4">
                                         <div className="flex gap-1.5">
-                                            <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                                            <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                                            <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                                            <div className="w-3 h-3 rounded-full bg-red-500/70"></div>
+                                            <div className="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+                                            <div className="w-3 h-3 rounded-full bg-green-500/70"></div>
                                         </div>
-                                        <span className="text-xs text-gray-500 font-mono ml-2">AscendOS Dashboard v2.4</span>
+                                        <span className="text-[11px] text-gray-500 font-mono ml-2">AscendOS v2.4 — Live Dashboard</span>
+                                        <span className="ml-auto text-[10px] text-green-400 font-mono bg-green-400/10 px-2 py-0.5 rounded-full">● Online</span>
                                     </div>
-                                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-3">
+                                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
                                         {[
-                                            { label: 'Focus Score', value: '94%', color: 'text-blue-400' },
-                                            { label: 'Tasks Done', value: '128', color: 'text-green-400' },
-                                            { label: 'Streak', value: '47d', color: 'text-orange-400' },
-                                            { label: 'XP Earned', value: '12.4K', color: 'text-purple-400' },
+                                            { label: 'Focus Score', value: '94%', color: '#5888ff', trend: '↑ 8%' },
+                                            { label: 'Tasks Done', value: '128', color: '#34d399', trend: '↑ 12' },
+                                            { label: 'Streak', value: '47d', color: '#f59e0b', trend: '🔥 Best' },
+                                            { label: 'XP Earned', value: '12.4K', color: '#a78bfa', trend: '↑ 2.1K' },
                                         ].map((stat) => (
-                                            <div key={stat.label} className="bg-[#111122] rounded-xl p-3 text-center">
-                                                <div className={`text-xl font-bold font-mono ${stat.color}`}>{stat.value}</div>
+                                            <div key={stat.label} className="bg-[#0f0f20] rounded-xl p-3.5 text-center border border-white/[0.04]">
+                                                <div className="text-2xl font-bold font-mono tracking-tight" style={{ color: stat.color }}>{stat.value}</div>
                                                 <div className="text-[10px] text-gray-500 mt-1">{stat.label}</div>
+                                                <div className="text-[10px] text-green-400/80 mt-0.5">{stat.trend}</div>
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="bg-[#111122] rounded-xl p-3 h-24 sm:h-32 flex items-center justify-center">
-                                        <svg className="w-full h-full" viewBox="0 0 400 100">
-                                            <defs>
-                                                <linearGradient id="chartGrad" x1="0" y1="0" x2="1" y2="0">
-                                                    <stop offset="0%" stopColor="#3366ff" />
-                                                    <stop offset="100%" stopColor="#8b5cf6" />
-                                                </linearGradient>
-                                            </defs>
-                                            <polyline
-                                                fill="none"
-                                                stroke="url(#chartGrad)"
-                                                strokeWidth="2.5"
-                                                points="0,70 40,55 80,60 120,35 160,40 200,20 240,25 280,15 320,30 360,10 400,18"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                            <circle cx="400" cy="18" r="5" fill="#8b5cf6" opacity="0.8">
-                                                <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite" />
-                                                <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2s" repeatCount="indefinite" />
-                                            </circle>
-                                        </svg>
+                                    <div className="bg-[#0f0f20] rounded-xl p-4 h-28 sm:h-36 flex items-end gap-[2px] border border-white/[0.04]">
+                                        {Array.from({ length: 30 }, (_, i) => {
+                                            const seed = (i * 7 + 13) % 100;
+                                            const height = 15 + Math.abs(Math.sin(i * 0.7)) * 70 + (seed / 100) * 30;
+                                            return (
+                                                <motion.div
+                                                    key={i}
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={isInView ? { height: `${Math.min(95, height)}%`, opacity: 1 } : { height: 0, opacity: 0 }}
+                                                    transition={{ delay: 1.2 + i * 0.03, duration: 0.5, ease: 'easeOut' }}
+                                                    className="flex-1 rounded-t-sm bg-gradient-to-t from-blue-500/70 to-purple-500/70 hover:from-blue-400 hover:to-purple-400 transition-colors cursor-pointer min-h-[3px]"
+                                                />
+                                            );
+                                        })}
+                                    </div>
+                                    <div className="flex justify-between mt-2 text-[10px] text-gray-600 px-1">
+                                        <span>Mon</span><span>Wed</span><span>Fri</span><span>Sun</span><span>Today</span>
                                     </div>
                                 </div>
                             </div>
-                            {/* Floating elements around dashboard */}
-                            <div className="absolute -top-6 -right-4 glass rounded-xl px-3 py-1.5 text-xs text-green-400 font-mono animate-float hidden lg:block">
+                            {/* Floating badges */}
+                            <motion.div
+                                animate={{ y: [0, -8, 0] }}
+                                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                                className="absolute -top-5 -right-3 glass rounded-xl px-3 py-1.5 text-xs text-green-400 font-mono hidden lg:block shadow-lg"
+                            >
                                 🧠 AI Active
-                            </div>
-                            <div className="absolute -bottom-4 -left-6 glass rounded-xl px-3 py-1.5 text-xs text-purple-400 font-mono animate-float-delayed hidden lg:block">
-                                ⚡ Learning...
-                            </div>
+                            </motion.div>
+                            <motion.div
+                                animate={{ y: [0, 6, 0] }}
+                                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
+                                className="absolute -bottom-5 -left-4 glass rounded-xl px-3 py-1.5 text-xs text-purple-400 font-mono hidden lg:block shadow-lg"
+                            >
+                                ⚡ Optimizing...
+                            </motion.div>
                         </motion.div>
                     </div>
                 </section>
@@ -778,121 +793,39 @@
         };
 
         // ========================================
-        // FEATURE CARDS DATA
+        // FEATURES DATA
         // ========================================
         const features = [
-            {
-                icon: '🧠',
-                title: 'AI Study Coach',
-                desc: 'Personalized study plans that adapt in real-time. Master any subject 3x faster with AI-guided learning paths.',
-                color: 'from-blue-500/20 to-blue-600/10',
-                border: 'border-blue-500/20',
-                glow: 'glow-blue',
-                preview: '📚 Active Session: Quantum Physics · 94% mastery · Next: Relativity',
-            },
-            {
-                icon: '⚡',
-                title: 'AI Productivity Engine',
-                desc: 'Automated task prioritization, deep work scheduling, and intelligent focus sessions optimized for peak cognitive performance.',
-                color: 'from-amber-500/20 to-orange-600/10',
-                border: 'border-amber-500/20',
-                glow: 'glow-purple',
-                preview: '🎯 3 high-priority tasks · Deep work block: 9:00-11:30 AM',
-            },
-            {
-                icon: '🚀',
-                title: 'AI Career Architect',
-                desc: 'Build your dream career with AI-powered resume optimization, interview prep, and personalized networking strategies.',
-                color: 'from-purple-500/20 to-violet-600/10',
-                border: 'border-purple-500/20',
-                glow: 'glow-purple',
-                preview: '💼 Resume score: 98/100 · 12 matched opportunities',
-            },
-            {
-                icon: '🔬',
-                title: 'AI Research Assistant',
-                desc: 'Accelerate research with AI literature review, paper summarization, and hypothesis generation at PhD level.',
-                color: 'from-emerald-500/20 to-teal-600/10',
-                border: 'border-emerald-500/20',
-                glow: 'glow-blue',
-                preview: '📄 247 papers analyzed · 3 research gaps identified',
-            },
-            {
-                icon: '🎯',
-                title: 'AI Focus Mode',
-                desc: 'Deep focus environments with adaptive soundscapes, distraction blocking, and flow state optimization.',
-                color: 'from-rose-500/20 to-pink-600/10',
-                border: 'border-rose-500/20',
-                glow: 'glow-purple',
-                preview: '🔒 Focus Shield Active · 127 min deep work streak',
-            },
-            {
-                icon: '🌱',
-                title: 'AI Habit Tracker',
-                desc: 'Build atomic habits with AI that understands your psychology and creates stickier behavior change protocols.',
-                color: 'from-cyan-500/20 to-sky-600/10',
-                border: 'border-cyan-500/20',
-                glow: 'glow-blue',
-                preview: '✅ 8/9 habits today · 47-day streak · Morning routine: Perfect',
-            },
-            {
-                icon: '💪',
-                title: 'AI Health Optimization',
-                desc: 'Sleep, nutrition, exercise, and mental wellness optimized by AI for peak student performance.',
-                color: 'from-lime-500/20 to-green-600/10',
-                border: 'border-lime-500/20',
-                glow: 'glow-purple',
-                preview: '😴 Sleep score: 92 · Recovery: Optimal · HRV: 68ms',
-            },
-            {
-                icon: '🏗️',
-                title: 'AI Founder Roadmap',
-                desc: 'From idea to MVP to funding. Your AI co-founder guides you through the entire startup journey.',
-                color: 'from-indigo-500/20 to-blue-700/10',
-                border: 'border-indigo-500/20',
-                glow: 'glow-blue',
-                preview: '🏢 Startup Phase: Seed · Next milestone: MVP Launch · 14d',
-            },
-            {
-                icon: '🎓',
-                title: 'AI Goal Prediction',
-                desc: 'Predictive analytics that forecast your academic outcomes and suggest optimal paths to achieve your targets.',
-                color: 'from-fuchsia-500/20 to-pink-600/10',
-                border: 'border-fuchsia-500/20',
-                glow: 'glow-purple',
-                preview: '📈 Predicted GPA: 3.92 · 94% confidence · On track for Dean\'s List',
-            },
-            {
-                icon: '🗺️',
-                title: 'AI Learning Paths',
-                desc: 'Custom curriculum generation that adapts to your learning style, pace, and knowledge gaps in real-time.',
-                color: 'from-sky-500/20 to-blue-600/10',
-                border: 'border-sky-500/20',
-                glow: 'glow-blue',
-                preview: '🛤️ Path: ML Engineering · 78% complete · Next: Neural Networks',
-            },
+            { icon: '🧠', title: 'AI Study Coach', desc: 'Personalized study plans that adapt in real-time. Master any subject 3x faster with AI-guided learning paths.', color: 'from-blue-500/18 to-blue-600/8', accent: '#5888ff', preview: '📚 Active: Quantum Physics · 94% mastery · Next: Relativity' },
+            { icon: '⚡', title: 'AI Productivity Engine', desc: 'Automated task prioritization, deep work scheduling, and intelligent focus sessions for peak cognitive performance.', color: 'from-amber-500/18 to-orange-600/8', accent: '#f59e0b', preview: '🎯 3 high-priority tasks · Deep work: 9:00-11:30 AM' },
+            { icon: '🚀', title: 'AI Career Architect', desc: 'Build your dream career with AI-powered resume optimization, interview prep, and personalized networking.', color: 'from-purple-500/18 to-violet-600/8', accent: '#a78bfa', preview: '💼 Resume score: 98/100 · 12 matched opportunities' },
+            { icon: '🔬', title: 'AI Research Assistant', desc: 'Accelerate research with AI literature review, paper summarization, and hypothesis generation at PhD level.', color: 'from-emerald-500/18 to-teal-600/8', accent: '#34d399', preview: '📄 247 papers analyzed · 3 research gaps identified' },
+            { icon: '🎯', title: 'AI Focus Mode', desc: 'Deep focus environments with adaptive soundscapes, distraction blocking, and flow state optimization.', color: 'from-rose-500/18 to-pink-600/8', accent: '#f43f5e', preview: '🔒 Focus Shield Active · 127 min deep work streak' },
+            { icon: '🌱', title: 'AI Habit Tracker', desc: 'Build atomic habits with AI that understands your psychology and creates stickier behavior change protocols.', color: 'from-cyan-500/18 to-sky-600/8', accent: '#22d3ee', preview: '✅ 8/9 habits today · 47-day streak · Morning: Perfect' },
+            { icon: '💪', title: 'AI Health Optimization', desc: 'Sleep, nutrition, exercise, and mental wellness optimized by AI for peak student performance.', color: 'from-lime-500/18 to-green-600/8', accent: '#84cc16', preview: '😴 Sleep score: 92 · Recovery: Optimal · HRV: 68ms' },
+            { icon: '🏗️', title: 'AI Founder Roadmap', desc: 'From idea to MVP to funding. Your AI co-founder guides you through the entire startup journey.', color: 'from-indigo-500/18 to-blue-700/8', accent: '#6366f1', preview: '🏢 Phase: Seed · Next milestone: MVP Launch · 14d' },
+            { icon: '🎓', title: 'AI Goal Prediction', desc: 'Predictive analytics that forecast your academic outcomes and suggest optimal paths to achieve targets.', color: 'from-fuchsia-500/18 to-pink-600/8', accent: '#d946ef', preview: '📈 Predicted GPA: 3.92 · 94% confidence · Dean\'s List' },
+            { icon: '🗺️', title: 'AI Learning Paths', desc: 'Custom curriculum generation that adapts to your learning style, pace, and knowledge gaps in real-time.', color: 'from-sky-500/18 to-blue-600/8', accent: '#0ea5e9', preview: '🛤️ Path: ML Engineering · 78% complete · Next: Neural Nets' },
         ];
 
         // ========================================
         // FEATURES SECTION
         // ========================================
         const FeaturesSection = () => {
-            const [hoveredCard, setHoveredCard] = useState(null);
-
             return (
                 <SectionWrapper id="features" className="py-24 sm:py-32">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
                         <div className="text-center mb-16">
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-blue-400 mb-4"
+                                className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-blue-400 mb-5"
                             >
                                 AI-POWERED FEATURES
                             </motion.div>
                             <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 25 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
@@ -909,7 +842,7 @@
                                 transition={{ delay: 0.2 }}
                                 className="text-gray-400 text-lg max-w-xl mx-auto"
                             >
-                                Ten powerful AI engines working together to transform you into an elite performer.
+                                Ten powerful AI engines working in harmony to transform you into an elite performer.
                             </motion.p>
                         </div>
 
@@ -917,26 +850,25 @@
                             {features.map((feature, i) => (
                                 <motion.div
                                     key={feature.title}
-                                    initial={{ opacity: 0, y: 40 }}
+                                    initial={{ opacity: 0, y: 35 }}
                                     whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, margin: '-50px' }}
-                                    transition={{ delay: i * 0.05, duration: 0.5 }}
-                                    onMouseEnter={() => setHoveredCard(i)}
-                                    onMouseLeave={() => setHoveredCard(null)}
-                                    className={`relative glass rounded-2xl p-5 sm:p-6 cursor-pointer spotlight-card hover-lift ${feature.glow} transition-all duration-500`}
-                                    style={{
-                                        borderColor: hoveredCard === i ? 'rgba(255,255,255,0.2)' : 'rgba(255,255,255,0.06)',
-                                    }}
+                                    viewport={{ once: true, margin: '-40px' }}
+                                    transition={{ delay: i * 0.04, duration: 0.5 }}
+                                    className={`relative glass rounded-2xl p-5 sm:p-6 cursor-pointer hover-lift group overflow-hidden`}
                                 >
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} rounded-2xl opacity-0 transition-opacity duration-500 pointer-events-none ${hoveredCard === i ? 'opacity-100' : ''}`}></div>
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
                                     <div className="relative z-10">
-                                        <div className="text-3xl mb-3">{feature.icon}</div>
-                                        <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
-                                        <p className="text-sm text-gray-400 leading-relaxed mb-4">{feature.desc}</p>
-                                        <div className="bg-black/30 rounded-lg px-3 py-2 text-[11px] text-gray-500 font-mono truncate">
+                                        <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300 inline-block">{feature.icon}</div>
+                                        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-white/95 transition-colors">{feature.title}</h3>
+                                        <p className="text-sm text-gray-400 leading-relaxed mb-4 group-hover:text-gray-300 transition-colors">{feature.desc}</p>
+                                        <div className="bg-black/35 rounded-lg px-3 py-2 text-[11px] text-gray-500 font-mono truncate group-hover:text-gray-400 transition-colors border border-white/[0.03]">
                                             {feature.preview}
                                         </div>
                                     </div>
+                                    <div
+                                        className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-400"
+                                        style={{ background: `linear-gradient(90deg, transparent, ${feature.accent}, transparent)` }}
+                                    ></div>
                                 </motion.div>
                             ))}
                         </div>
@@ -946,57 +878,122 @@
         };
 
         // ========================================
-        // DASHBOARD PREVIEW SECTION
+        // DASHBOARD SECTION
         // ========================================
         const DashboardSection = () => {
             const [activeTab, setActiveTab] = useState('analytics');
-
             const tabs = [
-                { id: 'analytics', label: 'Analytics' },
-                { id: 'tasks', label: 'Tasks' },
-                { id: 'habits', label: 'Habits' },
-                { id: 'career', label: 'Career' },
+                { id: 'analytics', label: 'Analytics', icon: '📊' },
+                { id: 'tasks', label: 'Tasks', icon: '✅' },
+                { id: 'habits', label: 'Habits', icon: '🔥' },
+                { id: 'career', label: 'Career', icon: '💼' },
             ];
 
-            const dashboardData = {
-                analytics: {
-                    stats: [
-                        { label: 'Productivity', value: '94%', change: '+8%', color: 'text-blue-400' },
-                        { label: 'Focus Hours', value: '32.5h', change: '+12%', color: 'text-green-400' },
-                        { label: 'Learning Rate', value: '1.8x', change: '+24%', color: 'text-purple-400' },
-                        { label: 'Goal Progress', value: '87%', change: '+5%', color: 'text-orange-400' },
-                    ],
-                },
-                tasks: {
-                    items: [
-                        { task: 'Complete ML assignment', priority: 'High', status: 'In Progress', due: '2h' },
-                        { task: 'Review research paper', priority: 'Medium', status: 'Pending', due: '5h' },
-                        { task: 'Prepare presentation', priority: 'High', status: 'Done', due: '1d' },
-                        { task: 'Study group session', priority: 'Low', status: 'Scheduled', due: '3h' },
-                    ],
-                },
-                habits: {
-                    streaks: [
-                        { habit: 'Morning Meditation', streak: 47, icon: '🧘' },
-                        { habit: 'Deep Work Block', streak: 32, icon: '💻' },
-                        { habit: 'Exercise', streak: 28, icon: '🏃' },
-                        { habit: 'Reading', streak: 55, icon: '📖' },
-                    ],
-                },
-                career: {
-                    opportunities: [
-                        { role: 'ML Intern @ Google', match: 94, status: 'Applied' },
-                        { role: 'Research Assistant @ MIT', match: 88, status: 'Shortlisted' },
-                        { role: 'Startup Founder Track', match: 96, status: 'In Progress' },
-                    ],
-                },
+            const content = {
+                analytics: (
+                    <div>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
+                            {[
+                                { label: 'Productivity', value: '94%', change: '+8%', color: 'text-blue-400' },
+                                { label: 'Focus Hours', value: '32.5h', change: '+12%', color: 'text-green-400' },
+                                { label: 'Learning Rate', value: '1.8x', change: '+24%', color: 'text-purple-400' },
+                                { label: 'Goal Progress', value: '87%', change: '+5%', color: 'text-orange-400' },
+                            ].map((s) => (
+                                <div key={s.label} className="bg-[#0f0f20] rounded-xl p-4 border border-white/[0.04]">
+                                    <div className="text-[10px] text-gray-500 mb-1">{s.label}</div>
+                                    <div className={`text-2xl font-bold font-mono ${s.color}`}>{s.value}</div>
+                                    <div className="text-[10px] text-green-400 mt-1">{s.change} this week</div>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="bg-[#0f0f20] rounded-xl p-4 h-44 border border-white/[0.04] flex items-end gap-[2px]">
+                            {Array.from({ length: 28 }, () => Math.random() * 95 + 5).map((v, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ height: 0 }}
+                                    whileInView={{ height: `${v}%` }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.025, duration: 0.45 }}
+                                    className="flex-1 bg-gradient-to-t from-blue-500 to-purple-500 rounded-t-sm opacity-65 hover:opacity-100 transition-opacity min-h-[3px]"
+                                />
+                            ))}
+                        </div>
+                        <div className="flex justify-between mt-2 text-[10px] text-gray-600">
+                            <span>4w ago</span><span>3w ago</span><span>2w ago</span><span>Last week</span><span>Now</span>
+                        </div>
+                    </div>
+                ),
+                tasks: (
+                    <div className="space-y-2">
+                        {[
+                            { task: 'Complete ML assignment', priority: 'High', status: 'In Progress', due: '2h' },
+                            { task: 'Review research paper', priority: 'Medium', status: 'Pending', due: '5h' },
+                            { task: 'Prepare presentation', priority: 'High', status: 'Done', due: '1d' },
+                            { task: 'Study group session', priority: 'Low', status: 'Scheduled', due: '3h' },
+                            { task: 'Update portfolio website', priority: 'Medium', status: 'In Progress', due: '8h' },
+                        ].map((item, i) => (
+                            <div key={i} className="bg-[#0f0f20] rounded-xl p-4 flex items-center justify-between border border-white/[0.04] hover:border-white/[0.08] transition-colors">
+                                <div>
+                                    <div className="text-white font-medium text-sm">{item.task}</div>
+                                    <div className="text-[10px] text-gray-500 mt-1">Due in {item.due}</div>
+                                </div>
+                                <div className="flex items-center gap-2.5">
+                                    <span className={`text-[10px] px-2 py-1 rounded-full font-medium ${
+                                        item.priority === 'High' ? 'bg-red-500/15 text-red-400' :
+                                        item.priority === 'Medium' ? 'bg-yellow-500/15 text-yellow-400' :
+                                        'bg-green-500/15 text-green-400'
+                                    }`}>{item.priority}</span>
+                                    <span className="text-[10px] text-gray-500">{item.status}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ),
+                habits: (
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        {[
+                            { habit: 'Morning Meditation', streak: 47, icon: '🧘', color: 'text-cyan-400' },
+                            { habit: 'Deep Work Block', streak: 32, icon: '💻', color: 'text-blue-400' },
+                            { habit: 'Exercise', streak: 28, icon: '🏃', color: 'text-green-400' },
+                            { habit: 'Reading', streak: 55, icon: '📖', color: 'text-purple-400' },
+                        ].map((h) => (
+                            <div key={h.habit} className="bg-[#0f0f20] rounded-xl p-5 text-center border border-white/[0.04] hover:border-white/[0.08] transition-colors">
+                                <div className="text-3xl mb-2">{h.icon}</div>
+                                <div className="text-white font-semibold text-xs mb-1">{h.habit}</div>
+                                <div className={`text-2xl font-bold font-mono ${h.color}`}>{h.streak}</div>
+                                <div className="text-[10px] text-gray-500 mt-1">day streak 🔥</div>
+                            </div>
+                        ))}
+                    </div>
+                ),
+                career: (
+                    <div className="space-y-3">
+                        {[
+                            { role: 'ML Intern @ Google DeepMind', match: 94, status: 'Applied', color: 'text-blue-400' },
+                            { role: 'Research Assistant @ MIT Media Lab', match: 88, status: 'Shortlisted', color: 'text-green-400' },
+                            { role: 'Startup Founder Track', match: 96, status: 'In Progress', color: 'text-purple-400' },
+                        ].map((opp, i) => (
+                            <div key={i} className="bg-[#0f0f20] rounded-xl p-4 flex items-center justify-between border border-white/[0.04] hover:border-white/[0.08] transition-colors">
+                                <div>
+                                    <div className="text-white font-medium text-sm">{opp.role}</div>
+                                    <div className={`text-[10px] ${opp.color} mt-1 font-mono`}>AI Match: {opp.match}%</div>
+                                </div>
+                                <span className={`text-[10px] px-3 py-1.5 rounded-full font-medium ${
+                                    opp.status === 'Applied' ? 'bg-blue-500/15 text-blue-400' :
+                                    opp.status === 'Shortlisted' ? 'bg-green-500/15 text-green-400' :
+                                    'bg-purple-500/15 text-purple-400'
+                                }`}>{opp.status}</span>
+                            </div>
+                        ))}
+                    </div>
+                ),
             };
 
             return (
                 <SectionWrapper id="dashboard" className="py-24 sm:py-32">
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
                         <div className="text-center mb-12">
-                            <div className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-purple-400 mb-4">
+                            <div className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-purple-400 mb-5">
                                 INTERACTIVE DASHBOARD
                             </div>
                             <h2 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight mb-4">
@@ -1005,122 +1002,39 @@
                                 <span className="gradient-text">Beautifully Engineered.</span>
                             </h2>
                         </div>
-
-                        <div className="glass-strong rounded-3xl p-1 sm:p-2 shadow-2xl glow-blue">
-                            <div className="bg-[#0d0d1a] rounded-2xl overflow-hidden">
-                                {/* Tab bar */}
-                                <div className="flex border-b border-gray-800/50 px-4 sm:px-6">
+                        <div className="glass-strong rounded-3xl p-[2px] shadow-2xl glow-purple">
+                            <div className="bg-[#0a0a18] rounded-[22px] overflow-hidden">
+                                <div className="flex border-b border-white/[0.05] px-4 sm:px-6 overflow-x-auto">
                                     {tabs.map((tab) => (
                                         <button
                                             key={tab.id}
                                             onClick={() => setActiveTab(tab.id)}
-                                            className={`px-4 py-3 text-sm font-medium transition-all relative ${
-                                                activeTab === tab.id
-                                                ? 'text-white'
-                                                : 'text-gray-500 hover:text-gray-300'
+                                            className={`px-4 py-3.5 text-sm font-medium transition-all relative whitespace-nowrap flex items-center gap-1.5 ${
+                                                activeTab === tab.id ? 'text-white' : 'text-gray-500 hover:text-gray-300'
                                             }`}
                                         >
+                                            <span className="text-sm">{tab.icon}</span>
                                             {tab.label}
                                             {activeTab === tab.id && (
                                                 <motion.div
-                                                    layoutId="tab-indicator"
-                                                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+                                                    layoutId="dash-tab"
+                                                    className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+                                                    transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                                                 />
                                             )}
                                         </button>
                                     ))}
                                 </div>
-
-                                {/* Content */}
                                 <div className="p-4 sm:p-6">
                                     <AnimatePresence mode="wait">
                                         <motion.div
                                             key={activeTab}
-                                            initial={{ opacity: 0, y: 10 }}
+                                            initial={{ opacity: 0, y: 12 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: -10 }}
-                                            transition={{ duration: 0.3 }}
+                                            exit={{ opacity: 0, y: -12 }}
+                                            transition={{ duration: 0.25 }}
                                         >
-                                            {activeTab === 'analytics' && (
-                                                <div>
-                                                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                                                        {dashboardData.analytics.stats.map((stat) => (
-                                                            <div key={stat.label} className="bg-[#111122] rounded-xl p-4">
-                                                                <div className="text-xs text-gray-500 mb-1">{stat.label}</div>
-                                                                <div className={`text-2xl font-bold font-mono ${stat.color}`}>{stat.value}</div>
-                                                                <div className="text-xs text-green-400 mt-1">{stat.change} this week</div>
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                    <div className="bg-[#111122] rounded-xl p-4 h-48 flex items-end gap-1">
-                                                        {Array.from({ length: 24 }, () => Math.random() * 100).map((v, i) => (
-                                                            <motion.div
-                                                                key={i}
-                                                                initial={{ height: 0 }}
-                                                                animate={{ height: `${v}%` }}
-                                                                transition={{ delay: i * 0.03, duration: 0.5 }}
-                                                                className="flex-1 bg-gradient-to-t from-blue-500 to-purple-500 rounded-t-sm opacity-70 hover:opacity-100 transition-opacity"
-                                                                style={{ minHeight: '4px' }}
-                                                            />
-                                                        ))}
-                                                    </div>
-                                                    <div className="flex justify-between mt-2 text-xs text-gray-600">
-                                                        <span>12 AM</span><span>6 AM</span><span>12 PM</span><span>6 PM</span><span>Now</span>
-                                                    </div>
-                                                </div>
-                                            )}
-
-                                            {activeTab === 'tasks' && (
-                                                <div className="space-y-2">
-                                                    {dashboardData.tasks.items.map((item, i) => (
-                                                        <div key={i} className="bg-[#111122] rounded-xl p-4 flex items-center justify-between">
-                                                            <div>
-                                                                <div className="text-white font-medium">{item.task}</div>
-                                                                <div className="text-xs text-gray-500 mt-1">Due in {item.due}</div>
-                                                            </div>
-                                                            <div className="flex items-center gap-3">
-                                                                <span className={`text-xs px-2 py-1 rounded-full ${
-                                                                    item.priority === 'High' ? 'bg-red-500/20 text-red-400' :
-                                                                    item.priority === 'Medium' ? 'bg-yellow-500/20 text-yellow-400' :
-                                                                    'bg-green-500/20 text-green-400'
-                                                                }`}>{item.priority}</span>
-                                                                <span className="text-xs text-gray-500">{item.status}</span>
-                                                            </div>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
-
-                                            {activeTab === 'habits' && (
-                                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                                                    {dashboardData.habits.streaks.map((h) => (
-                                                        <div key={h.habit} className="bg-[#111122] rounded-xl p-4 text-center">
-                                                            <div className="text-3xl mb-2">{h.icon}</div>
-                                                            <div className="text-white font-semibold text-sm">{h.habit}</div>
-                                                            <div className="text-2xl font-bold gradient-text font-mono mt-2">{h.streak}</div>
-                                                            <div className="text-xs text-gray-500">day streak 🔥</div>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
-
-                                            {activeTab === 'career' && (
-                                                <div className="space-y-3">
-                                                    {dashboardData.career.opportunities.map((opp, i) => (
-                                                        <div key={i} className="bg-[#111122] rounded-xl p-4 flex items-center justify-between">
-                                                            <div>
-                                                                <div className="text-white font-medium">{opp.role}</div>
-                                                                <div className="text-xs text-gray-500 mt-1">Match: {opp.match}%</div>
-                                                            </div>
-                                                            <span className={`text-xs px-3 py-1.5 rounded-full ${
-                                                                opp.status === 'Applied' ? 'bg-blue-500/20 text-blue-400' :
-                                                                opp.status === 'Shortlisted' ? 'bg-green-500/20 text-green-400' :
-                                                                'bg-purple-500/20 text-purple-400'
-                                                            }`}>{opp.status}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            )}
+                                            {content[activeTab]}
                                         </motion.div>
                                     </AnimatePresence>
                                 </div>
@@ -1136,26 +1050,28 @@
         // ========================================
         const GamificationSection = () => {
             const ranks = [
-                { name: 'Novice', xp: '0-1K', color: 'text-gray-400', icon: '🌱' },
-                { name: 'Scholar', xp: '1K-5K', color: 'text-green-400', icon: '📚' },
-                { name: 'Elite', xp: '5K-20K', color: 'text-blue-400', icon: '💎' },
-                { name: 'Master', xp: '20K-50K', color: 'text-purple-400', icon: '👑' },
-                { name: 'Legend', xp: '50K+', color: 'text-yellow-400', icon: '🌟' },
+                { name: 'Novice', xp: '0-1K', icon: '🌱', color: 'text-gray-400' },
+                { name: 'Scholar', xp: '1K-5K', icon: '📚', color: 'text-green-400' },
+                { name: 'Elite', xp: '5K-20K', icon: '💎', color: 'text-blue-400' },
+                { name: 'Master', xp: '20K-50K', icon: '👑', color: 'text-purple-400' },
+                { name: 'Legend', xp: '50K+', icon: '🌟', color: 'text-yellow-400' },
             ];
-
             const achievements = [
                 { name: 'Early Riser', desc: '30 days of 6AM wake-up', icon: '🌅', unlocked: true },
                 { name: 'Deep Worker', desc: '100 hours of deep focus', icon: '🧘', unlocked: true },
                 { name: 'Speed Learner', desc: 'Complete a course in 7 days', icon: '⚡', unlocked: true },
                 { name: 'Networker', desc: 'Connect with 50 peers', icon: '🤝', unlocked: false },
                 { name: 'Publisher', desc: 'Publish your first paper', icon: '📝', unlocked: false },
+                { name: 'Polyglot', desc: 'Learn 3 languages', icon: '🌍', unlocked: false },
             ];
+            const ref = useRef(null);
+            const isInView = useInView(ref, { once: true });
 
             return (
                 <SectionWrapper id="gamification" className="py-24 sm:py-32">
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10" ref={ref}>
                         <div className="text-center mb-14">
-                            <div className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-yellow-400 mb-4">
+                            <div className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-yellow-400 mb-5">
                                 GAMIFICATION SYSTEM
                             </div>
                             <h2 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight mb-4">
@@ -1165,29 +1081,30 @@
                             </h2>
                         </div>
 
-                        {/* XP Progress Bar */}
+                        {/* XP Card */}
                         <div className="glass-strong rounded-2xl p-6 sm:p-8 mb-8">
-                            <div className="flex items-center justify-between mb-4">
+                            <div className="flex items-center justify-between mb-5 flex-wrap gap-4">
                                 <div className="flex items-center gap-3">
-                                    <span className="text-3xl">💎</span>
+                                    <span className="text-4xl">💎</span>
                                     <div>
-                                        <div className="text-white font-bold text-lg">Elite Scholar</div>
-                                        <div className="text-xs text-gray-500">Rank 3 of 5</div>
+                                        <div className="text-white font-bold text-xl">Elite Scholar</div>
+                                        <div className="text-xs text-gray-500">Rank 3 of 5 — Keep climbing!</div>
                                     </div>
                                 </div>
                                 <div className="text-right">
-                                    <div className="text-2xl font-bold font-mono gradient-text">12,450</div>
-                                    <div className="text-xs text-gray-500">/ 20,000 XP</div>
+                                    <div className="text-3xl font-bold font-mono gradient-text">12,450</div>
+                                    <div className="text-xs text-gray-500">/ 20,000 XP to next rank</div>
                                 </div>
                             </div>
-                            <div className="h-3 bg-gray-800 rounded-full overflow-hidden">
+                            <div className="h-3 bg-gray-800/60 rounded-full overflow-hidden">
                                 <motion.div
                                     initial={{ width: 0 }}
-                                    whileInView={{ width: '62%' }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 1.5, ease: 'easeOut' }}
-                                    className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"
-                                />
+                                    animate={isInView ? { width: '62%' } : { width: 0 }}
+                                    transition={{ duration: 1.6, ease: 'easeOut', delay: 0.3 }}
+                                    className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full relative"
+                                >
+                                    <div className="absolute inset-0 bg-white/20 rounded-full animate-pulse"></div>
+                                </motion.div>
                             </div>
                         </div>
 
@@ -1196,41 +1113,73 @@
                             {ranks.map((rank, i) => (
                                 <motion.div
                                     key={rank.name}
-                                    initial={{ opacity: 0, y: 20 }}
+                                    initial={{ opacity: 0, y: 25 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className={`glass rounded-xl p-3 text-center ${i === 2 ? 'ring-2 ring-blue-500/40 glow-blue' : ''}`}
+                                    className={`glass rounded-xl p-3.5 text-center transition-all ${
+                                        i === 2 ? 'ring-2 ring-blue-500/35 glow-blue scale-105' : ''
+                                    }`}
                                 >
-                                    <div className="text-xl mb-1">{rank.icon}</div>
-                                    <div className={`text-xs font-semibold ${rank.color}`}>{rank.name}</div>
-                                    <div className="text-[10px] text-gray-600">{rank.xp}</div>
+                                    <div className="text-2xl mb-1.5">{rank.icon}</div>
+                                    <div className={`text-[11px] font-semibold ${rank.color}`}>{rank.name}</div>
+                                    <div className="text-[9px] text-gray-600 mt-0.5">{rank.xp} XP</div>
                                 </motion.div>
                             ))}
                         </div>
 
                         {/* Achievements */}
                         <div className="glass rounded-2xl p-6 sm:p-8">
-                            <h3 className="text-white font-semibold mb-4">🏆 Achievements</h3>
-                            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                            <h3 className="text-white font-semibold mb-5 text-lg">🏆 Achievements</h3>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
                                 {achievements.map((ach, i) => (
                                     <motion.div
                                         key={ach.name}
-                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        initial={{ opacity: 0, scale: 0.85 }}
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         viewport={{ once: true }}
-                                        transition={{ delay: i * 0.08 }}
+                                        transition={{ delay: i * 0.07 }}
                                         className={`rounded-xl p-4 text-center transition-all ${
                                             ach.unlocked
-                                            ? 'bg-[#111122] border border-gray-700/50'
-                                            : 'bg-[#0a0a15] border border-gray-800/30 opacity-50'
+                                            ? 'bg-[#0f0f20] border border-white/[0.06] hover:border-white/[0.14]'
+                                            : 'bg-[#060610] border border-white/[0.02] opacity-45'
                                         }`}
                                     >
                                         <div className="text-2xl mb-2">{ach.icon}</div>
-                                        <div className="text-xs font-medium text-white">{ach.name}</div>
-                                        <div className="text-[10px] text-gray-500 mt-1">{ach.desc}</div>
-                                        {ach.unlocked && <div className="text-xs text-green-400 mt-2">✅ Unlocked</div>}
+                                        <div className="text-[11px] font-medium text-white">{ach.name}</div>
+                                        <div className="text-[9px] text-gray-500 mt-1 leading-tight">{ach.desc}</div>
+                                        {ach.unlocked && <div className="text-[10px] text-green-400 mt-2 font-medium">✅ Unlocked</div>}
+                                        {!ach.unlocked && <div className="text-[10px] text-gray-600 mt-2">🔒 Locked</div>}
                                     </motion.div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Leaderboard preview */}
+                        <div className="glass rounded-2xl p-6 sm:p-8 mt-6">
+                            <h3 className="text-white font-semibold mb-4 text-lg">🌎 Global Leaderboard</h3>
+                            <div className="space-y-2">
+                                {[
+                                    { name: 'Alex K.', xp: '48,200', rank: '🥇', school: 'Stanford' },
+                                    { name: 'Priya M.', xp: '41,500', rank: '🥈', school: 'MIT' },
+                                    { name: 'You', xp: '12,450', rank: '🏅', school: 'Your School', isYou: true },
+                                    { name: 'Jordan L.', xp: '11,800', rank: '4th', school: 'Harvard' },
+                                ].map((entry, i) => (
+                                    <div
+                                        key={i}
+                                        className={`flex items-center gap-3 p-3 rounded-xl transition-colors ${
+                                            entry.isYou
+                                            ? 'bg-blue-500/10 border border-blue-500/25'
+                                            : 'bg-[#0f0f20]/50 border border-white/[0.02] hover:border-white/[0.06]'
+                                        }`}
+                                    >
+                                        <span className="text-lg w-8 text-center">{entry.rank}</span>
+                                        <span className={`font-medium text-sm flex-1 ${entry.isYou ? 'text-blue-400' : 'text-white'}`}>
+                                            {entry.name}
+                                        </span>
+                                        <span className="text-xs text-gray-500 hidden sm:block">{entry.school}</span>
+                                        <span className="text-sm font-mono font-bold gradient-text">{entry.xp} XP</span>
+                                    </div>
                                 ))}
                             </div>
                         </div>
@@ -1248,30 +1197,30 @@
                     quote: "AscendOS completely transformed how I study. I went from a 3.2 GPA to a 3.9 in one semester. The AI study coach is like having a personal tutor 24/7.",
                     name: "Sarah Chen",
                     role: "Computer Science @ Stanford",
-                    avatar: "SC",
-                    color: "from-blue-500 to-cyan-500",
+                    initials: "SC",
+                    gradient: "from-blue-500 to-cyan-500",
                 },
                 {
                     quote: "As a student founder, this platform is a game-changer. The AI career architect helped me land my first internship at a unicorn startup. It's unreal.",
                     name: "Marcus Rivera",
                     role: "Founder & Student @ MIT",
-                    avatar: "MR",
-                    color: "from-purple-500 to-pink-500",
+                    initials: "MR",
+                    gradient: "from-purple-500 to-pink-500",
                 },
                 {
                     quote: "The habit tracker and focus mode are insane. I've built a 47-day meditation streak and my productivity has literally doubled. This should be mandatory for all students.",
                     name: "Aisha Patel",
                     role: "Pre-Med @ Harvard",
-                    avatar: "AP",
-                    color: "from-green-500 to-teal-500",
+                    initials: "AP",
+                    gradient: "from-green-500 to-teal-500",
                 },
             ];
 
             return (
                 <SectionWrapper id="social-proof" className="py-24 sm:py-32">
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10">
                         <div className="text-center mb-14">
-                            <div className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-green-400 mb-4">
+                            <div className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-green-400 mb-5">
                                 SOCIAL PROOF
                             </div>
                             <h2 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight mb-4">
@@ -1281,19 +1230,19 @@
                             </h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
                             {testimonials.map((t, i) => (
                                 <motion.div
                                     key={t.name}
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.15 }}
+                                    transition={{ delay: i * 0.14 }}
                                     className="glass rounded-2xl p-6 hover-lift"
                                 >
                                     <div className="flex items-center gap-3 mb-4">
-                                        <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white font-bold text-sm`}>
-                                            {t.avatar}
+                                        <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.gradient} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}>
+                                            {t.initials}
                                         </div>
                                         <div>
                                             <div className="text-white font-semibold text-sm">{t.name}</div>
@@ -1301,27 +1250,27 @@
                                         </div>
                                     </div>
                                     <p className="text-gray-400 text-sm leading-relaxed italic">"{t.quote}"</p>
-                                    <div className="mt-3 text-yellow-400 text-xs">★★★★★</div>
+                                    <div className="mt-3 text-yellow-400 text-xs tracking-wider">★★★★★</div>
                                 </motion.div>
                             ))}
                         </div>
 
-                        {/* Stats bar */}
+                        {/* Stats */}
                         <motion.div
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 35 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="glass-strong rounded-2xl p-6 sm:p-8 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
+                            className="glass-strong rounded-2xl p-6 sm:p-10 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
                         >
                             {[
-                                { value: '128K+', label: 'Active Students' },
-                                { value: '94%', label: 'Satisfaction Rate' },
-                                { value: '47', label: 'Countries Reached' },
-                                { value: '$2.4B', label: 'Scholarships Earned' },
+                                { value: '128K+', label: 'Active Students', color: 'text-blue-400' },
+                                { value: '94%', label: 'Satisfaction Rate', color: 'text-green-400' },
+                                { value: '47', label: 'Countries Reached', color: 'text-purple-400' },
+                                { value: '$2.4B', label: 'Scholarships Earned', color: 'text-yellow-400' },
                             ].map((stat) => (
                                 <div key={stat.label}>
-                                    <div className="text-2xl sm:text-3xl font-bold font-mono gradient-text">{stat.value}</div>
-                                    <div className="text-xs text-gray-500 mt-1">{stat.label}</div>
+                                    <div className={`text-2xl sm:text-3xl font-bold font-mono ${stat.color}`}>{stat.value}</div>
+                                    <div className="text-xs text-gray-500 mt-1.5">{stat.label}</div>
                                 </div>
                             ))}
                         </motion.div>
@@ -1331,7 +1280,7 @@
         };
 
         // ========================================
-        // FUTURE VISION SECTION
+        // VISION SECTION
         // ========================================
         const VisionSection = () => {
             const visions = [
@@ -1345,10 +1294,10 @@
 
             return (
                 <SectionWrapper id="vision" className="py-24 sm:py-32 relative">
-                    <div className="absolute inset-0 grid-bg opacity-50"></div>
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="absolute inset-0 grid-bg opacity-40"></div>
+                    <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 relative z-10">
                         <div className="text-center mb-14">
-                            <div className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-cyan-400 mb-4">
+                            <div className="inline-block px-4 py-1.5 glass rounded-full text-xs font-mono text-cyan-400 mb-5">
                                 FUTURE VISION
                             </div>
                             <h2 className="text-4xl sm:text-5xl font-extrabold font-display tracking-tight mb-4">
@@ -1361,39 +1310,39 @@
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
                             {visions.map((v, i) => (
                                 <motion.div
                                     key={v.title}
-                                    initial={{ opacity: 0, y: 30 }}
+                                    initial={{ opacity: 0, y: 28 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: i * 0.08 }}
+                                    transition={{ delay: i * 0.07 }}
                                     className="glass rounded-2xl p-6 hover-lift text-center"
                                 >
                                     <div className="text-4xl mb-3">{v.icon}</div>
                                     <h3 className="text-white font-semibold mb-2">{v.title}</h3>
-                                    <p className="text-sm text-gray-500">{v.desc}</p>
+                                    <p className="text-sm text-gray-500 leading-relaxed">{v.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
 
                         {/* CTA Banner */}
                         <motion.div
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 0, y: 45 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="mt-16 glass-strong rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden"
+                            className="glass-strong rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden shimmer-border"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/4 via-purple-500/4 to-pink-500/4"></div>
                             <div className="relative z-10">
                                 <h3 className="text-2xl sm:text-3xl font-bold font-display text-white mb-4">
                                     Ready to Ascend?
                                 </h3>
-                                <p className="text-gray-400 mb-8 max-w-md mx-auto">
+                                <p className="text-gray-400 mb-8 max-w-md mx-auto text-sm sm:text-base">
                                     Join 128,000+ elite students already using AscendOS AI to build their future.
                                 </p>
-                                <button className="px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl hover:from-blue-500 hover:to-purple-500 transition-all shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 active:scale-95">
+                                <button className="px-8 py-4 text-base font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl hover:from-blue-500 hover:to-purple-500 transition-all shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/55 active:scale-[0.96]">
                                     Start Free Now →
                                 </button>
                                 <p className="text-xs text-gray-600 mt-4">No credit card required · Free forever tier available</p>
@@ -1408,35 +1357,33 @@
         // FOOTER
         // ========================================
         const Footer = () => (
-            <footer className="relative z-10 border-t border-gray-800/30">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-                    {/* Glow divider */}
-                    <div className="h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent mb-12"></div>
+            <footer className="relative z-10 border-t border-white/[0.04]">
+                <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 py-12 sm:py-16">
+                    <div className="h-px bg-gradient-to-r from-transparent via-blue-500/25 to-transparent mb-12"></div>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12">
-                        <div className="col-span-2 sm:col-span-1">
+                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-8 mb-12">
+                        <div className="col-span-2 sm:col-span-2">
                             <div className="flex items-center gap-2 mb-4">
                                 <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                                     <span className="text-white font-bold text-sm">A</span>
                                 </div>
-                                <span className="font-bold font-display">
+                                <span className="font-bold font-display text-lg">
                                     <span className="text-white">Ascend</span>
                                     <span className="gradient-text">OS</span>
                                 </span>
                             </div>
-                            <p className="text-sm text-gray-500 mb-4">The AI Operating System for elite students.</p>
-                            <div className="flex gap-3">
-                                {['Twitter', 'GitHub', 'Discord', 'LinkedIn'].map((s) => (
-                                    <a key={s} href="#" className="w-8 h-8 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-white hover:border-gray-500 transition-all text-xs">
-                                        {s[0]}
+                            <p className="text-sm text-gray-500 mb-4 max-w-xs">The AI Operating System for elite students. Built for those who refuse to settle.</p>
+                            <div className="flex gap-2.5">
+                                {['T', 'G', 'D', 'L'].map((s) => (
+                                    <a key={s} href="#" className="w-8 h-8 rounded-lg glass flex items-center justify-center text-gray-400 hover:text-white hover:border-white/20 transition-all text-xs font-semibold">
+                                        {s}
                                     </a>
                                 ))}
                             </div>
                         </div>
-
                         {[
                             { title: 'Product', links: ['Features', 'Pricing', 'Dashboard', 'API', 'Changelog'] },
-                            { title: 'Resources', links: ['Blog', 'Documentation', 'Community', 'Tutorials', 'Research'] },
+                            { title: 'Resources', links: ['Blog', 'Docs', 'Community', 'Tutorials', 'Research'] },
                             { title: 'Company', links: ['About', 'Careers', 'Contact', 'Press', 'Ethics'] },
                         ].map((col) => (
                             <div key={col.title}>
@@ -1453,8 +1400,8 @@
                     </div>
 
                     {/* Newsletter */}
-                    <div className="glass rounded-2xl p-6 sm:p-8 mb-10 flex flex-col sm:flex-row items-center gap-4">
-                        <div className="flex-1">
+                    <div className="glass rounded-2xl p-6 sm:p-8 mb-10 flex flex-col sm:flex-row items-center gap-5">
+                        <div className="flex-1 text-center sm:text-left">
                             <h4 className="text-white font-semibold mb-1">Stay ahead of the curve</h4>
                             <p className="text-sm text-gray-500">Get weekly AI insights and product updates.</p>
                         </div>
@@ -1462,21 +1409,21 @@
                             <input
                                 type="email"
                                 placeholder="you@university.edu"
-                                className="flex-1 sm:w-64 px-4 py-3 bg-[#0a0a15] border border-gray-700 rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/50 transition-colors"
+                                className="flex-1 sm:w-64 px-4 py-3 bg-[#060610] border border-white/[0.08] rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/40 transition-colors"
                             />
-                            <button className="px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all">
+                            <button className="px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all whitespace-nowrap">
                                 Subscribe
                             </button>
                         </div>
                     </div>
 
-                    {/* Bottom bar */}
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-800/30">
-                        <p className="text-xs text-gray-600">© 2026 AscendOS AI. All rights reserved. Built with ❤️ for ambitious students.</p>
-                        <div className="flex gap-4 text-xs text-gray-600">
-                            <a href="#" className="hover:text-gray-400 transition-colors">Privacy Policy</a>
-                            <a href="#" className="hover:text-gray-400 transition-colors">Terms of Service</a>
-                            <a href="#" className="hover:text-gray-400 transition-colors">AI Ethics Statement</a>
+                    {/* Bottom */}
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/[0.04]">
+                        <p className="text-xs text-gray-600">© 2026 AscendOS AI. All rights reserved. Built for ambitious students.</p>
+                        <div className="flex gap-5 text-xs text-gray-600">
+                            <a href="#" className="hover:text-gray-400 transition-colors">Privacy</a>
+                            <a href="#" className="hover:text-gray-400 transition-colors">Terms</a>
+                            <a href="#" className="hover:text-gray-400 transition-colors">AI Ethics</a>
                         </div>
                     </div>
                 </div>
@@ -1488,7 +1435,7 @@
         // ========================================
         const App = () => {
             return (
-                <div className="relative min-h-screen">
+                <div className="relative min-h-screen bg-[#04040d]">
                     <ParticleCanvas />
                     <FloatingOrbs />
                     <MouseGlow />
@@ -1507,7 +1454,8 @@
         };
 
         // Render
-        const root = ReactDOM.createRoot(document.getElementById('root'));
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
         root.render(<App />);
     </script>
 </body>
