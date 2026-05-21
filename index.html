@@ -29,6 +29,18 @@
                         mono: ['JetBrains Mono', 'monospace'],
                     },
                     colors: {
+                        // Core background palette
+                        deep: '#04040d',
+                        primary: '#0a0a18',
+                        card: '#0f0f20',
+                        'card-alt': '#111122',
+                        // Glass surfaces
+                        glass: 'rgba(12, 12, 30, 0.65)',
+                        'glass-strong': 'rgba(16, 16, 38, 0.78)',
+                        // Borders
+                        'border-subtle': 'rgba(255, 255, 255, 0.06)',
+                        'border-glow': 'rgba(255, 255, 255, 0.14)',
+                        // Accents
                         brand: {
                             400: '#5888ff',
                             500: '#3366ff',
@@ -40,6 +52,12 @@
                             500: '#8b5cf6',
                             600: '#7c3aed',
                         },
+                        cyan: {
+                            400: '#22d3ee',
+                        },
+                        // Text
+                        'text-primary': '#eeeef5',
+                        'text-secondary': '#9a9ab8',
                     },
                     animation: {
                         'float': 'float 7s ease-in-out infinite',
@@ -84,7 +102,7 @@
     <style>
         :root {
             --bg-deep: #04040d;
-            --bg-primary: #08081a;
+            --bg-primary: #0a0a18;
             --bg-card: rgba(12, 12, 30, 0.65);
             --border-subtle: rgba(255, 255, 255, 0.06);
             --border-glow: rgba(255, 255, 255, 0.14);
@@ -114,6 +132,11 @@
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
             min-height: 100vh;
+        }
+
+        /* Force body background via Tailwind class to ensure consistency */
+        body.bg-deep {
+            background-color: #04040d;
         }
 
         ::-webkit-scrollbar {
@@ -250,12 +273,12 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-deep">
     <div id="root"></div>
     <canvas id="particles-canvas"></canvas>
 
     <script type="text/babel">
-        const { useState, useEffect, useRef, useCallback, useMemo, createContext, useContext } = React;
+        const { useState, useEffect, useRef, useCallback, useMemo } = React;
         const {
             motion,
             AnimatePresence,
@@ -265,9 +288,6 @@
             useInView,
             useAnimation,
             LayoutGroup,
-            LazyMotion,
-            domAnimation,
-            m
         } = FramerMotion;
 
         // ========================================
@@ -697,7 +717,7 @@
                             <div className="flex items-center gap-2">
                                 <div className="flex -space-x-2">
                                     {['M', 'S', 'H', 'O'].map((letter, i) => (
-                                        <div key={i} className="w-7 h-7 rounded-full bg-gray-700 border-2 border-[#04040d] flex items-center justify-center text-[10px] font-bold text-gray-300"
+                                        <div key={i} className="w-7 h-7 rounded-full bg-gray-700 border-2 border-deep flex items-center justify-center text-[10px] font-bold text-gray-300"
                                         style={{ zIndex: 4 - i }}>
                                             {letter}
                                         </div>
@@ -727,7 +747,7 @@
                             className="relative max-w-4xl mx-auto"
                         >
                             <div className="glass-strong rounded-3xl p-[2px] shadow-2xl glow-blue relative overflow-hidden">
-                                <div className="bg-[#0a0a18] rounded-[22px] p-4 sm:p-6">
+                                <div className="bg-primary rounded-[22px] p-4 sm:p-6">
                                     <div className="flex items-center gap-2 mb-4">
                                         <div className="flex gap-1.5">
                                             <div className="w-3 h-3 rounded-full bg-red-500/70"></div>
@@ -744,14 +764,14 @@
                                             { label: 'Streak', value: '47d', color: '#f59e0b', trend: '🔥 Best' },
                                             { label: 'XP Earned', value: '12.4K', color: '#a78bfa', trend: '↑ 2.1K' },
                                         ].map((stat) => (
-                                            <div key={stat.label} className="bg-[#0f0f20] rounded-xl p-3.5 text-center border border-white/[0.04]">
+                                            <div key={stat.label} className="bg-card-alt rounded-xl p-3.5 text-center border border-border-subtle">
                                                 <div className="text-2xl font-bold font-mono tracking-tight" style={{ color: stat.color }}>{stat.value}</div>
                                                 <div className="text-[10px] text-gray-500 mt-1">{stat.label}</div>
                                                 <div className="text-[10px] text-green-400/80 mt-0.5">{stat.trend}</div>
                                             </div>
                                         ))}
                                     </div>
-                                    <div className="bg-[#0f0f20] rounded-xl p-4 h-28 sm:h-36 flex items-end gap-[2px] border border-white/[0.04]">
+                                    <div className="bg-card-alt rounded-xl p-4 h-28 sm:h-36 flex items-end gap-[2px] border border-border-subtle">
                                         {Array.from({ length: 30 }, (_, i) => {
                                             const seed = (i * 7 + 13) % 100;
                                             const height = 15 + Math.abs(Math.sin(i * 0.7)) * 70 + (seed / 100) * 30;
@@ -899,14 +919,14 @@
                                 { label: 'Learning Rate', value: '1.8x', change: '+24%', color: 'text-purple-400' },
                                 { label: 'Goal Progress', value: '87%', change: '+5%', color: 'text-orange-400' },
                             ].map((s) => (
-                                <div key={s.label} className="bg-[#0f0f20] rounded-xl p-4 border border-white/[0.04]">
+                                <div key={s.label} className="bg-card rounded-xl p-4 border border-border-subtle">
                                     <div className="text-[10px] text-gray-500 mb-1">{s.label}</div>
                                     <div className={`text-2xl font-bold font-mono ${s.color}`}>{s.value}</div>
                                     <div className="text-[10px] text-green-400 mt-1">{s.change} this week</div>
                                 </div>
                             ))}
                         </div>
-                        <div className="bg-[#0f0f20] rounded-xl p-4 h-44 border border-white/[0.04] flex items-end gap-[2px]">
+                        <div className="bg-card rounded-xl p-4 h-44 border border-border-subtle flex items-end gap-[2px]">
                             {Array.from({ length: 28 }, () => Math.random() * 95 + 5).map((v, i) => (
                                 <motion.div
                                     key={i}
@@ -932,7 +952,7 @@
                             { task: 'Study group session', priority: 'Low', status: 'Scheduled', due: '3h' },
                             { task: 'Update portfolio website', priority: 'Medium', status: 'In Progress', due: '8h' },
                         ].map((item, i) => (
-                            <div key={i} className="bg-[#0f0f20] rounded-xl p-4 flex items-center justify-between border border-white/[0.04] hover:border-white/[0.08] transition-colors">
+                            <div key={i} className="bg-card rounded-xl p-4 flex items-center justify-between border border-border-subtle hover:border-white/[0.08] transition-colors">
                                 <div>
                                     <div className="text-white font-medium text-sm">{item.task}</div>
                                     <div className="text-[10px] text-gray-500 mt-1">Due in {item.due}</div>
@@ -957,7 +977,7 @@
                             { habit: 'Exercise', streak: 28, icon: '🏃', color: 'text-green-400' },
                             { habit: 'Reading', streak: 55, icon: '📖', color: 'text-purple-400' },
                         ].map((h) => (
-                            <div key={h.habit} className="bg-[#0f0f20] rounded-xl p-5 text-center border border-white/[0.04] hover:border-white/[0.08] transition-colors">
+                            <div key={h.habit} className="bg-card rounded-xl p-5 text-center border border-border-subtle hover:border-white/[0.08] transition-colors">
                                 <div className="text-3xl mb-2">{h.icon}</div>
                                 <div className="text-white font-semibold text-xs mb-1">{h.habit}</div>
                                 <div className={`text-2xl font-bold font-mono ${h.color}`}>{h.streak}</div>
@@ -973,7 +993,7 @@
                             { role: 'Research Assistant @ MIT Media Lab', match: 88, status: 'Shortlisted', color: 'text-green-400' },
                             { role: 'Startup Founder Track', match: 96, status: 'In Progress', color: 'text-purple-400' },
                         ].map((opp, i) => (
-                            <div key={i} className="bg-[#0f0f20] rounded-xl p-4 flex items-center justify-between border border-white/[0.04] hover:border-white/[0.08] transition-colors">
+                            <div key={i} className="bg-card rounded-xl p-4 flex items-center justify-between border border-border-subtle hover:border-white/[0.08] transition-colors">
                                 <div>
                                     <div className="text-white font-medium text-sm">{opp.role}</div>
                                     <div className={`text-[10px] ${opp.color} mt-1 font-mono`}>AI Match: {opp.match}%</div>
@@ -1003,7 +1023,7 @@
                             </h2>
                         </div>
                         <div className="glass-strong rounded-3xl p-[2px] shadow-2xl glow-purple">
-                            <div className="bg-[#0a0a18] rounded-[22px] overflow-hidden">
+                            <div className="bg-primary rounded-[22px] overflow-hidden">
                                 <div className="flex border-b border-white/[0.05] px-4 sm:px-6 overflow-x-auto">
                                     {tabs.map((tab) => (
                                         <button
@@ -1141,8 +1161,8 @@
                                         transition={{ delay: i * 0.07 }}
                                         className={`rounded-xl p-4 text-center transition-all ${
                                             ach.unlocked
-                                            ? 'bg-[#0f0f20] border border-white/[0.06] hover:border-white/[0.14]'
-                                            : 'bg-[#060610] border border-white/[0.02] opacity-45'
+                                            ? 'bg-card border border-white/[0.06] hover:border-white/[0.14]'
+                                            : 'bg-deep border border-white/[0.02] opacity-45'
                                         }`}
                                     >
                                         <div className="text-2xl mb-2">{ach.icon}</div>
@@ -1170,7 +1190,7 @@
                                         className={`flex items-center gap-3 p-3 rounded-xl transition-colors ${
                                             entry.isYou
                                             ? 'bg-blue-500/10 border border-blue-500/25'
-                                            : 'bg-[#0f0f20]/50 border border-white/[0.02] hover:border-white/[0.06]'
+                                            : 'bg-card/50 border border-white/[0.02] hover:border-white/[0.06]'
                                         }`}
                                     >
                                         <span className="text-lg w-8 text-center">{entry.rank}</span>
@@ -1409,7 +1429,7 @@
                             <input
                                 type="email"
                                 placeholder="you@university.edu"
-                                className="flex-1 sm:w-64 px-4 py-3 bg-[#060610] border border-white/[0.08] rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/40 transition-colors"
+                                className="flex-1 sm:w-64 px-4 py-3 bg-deep border border-white/[0.08] rounded-xl text-sm text-white placeholder-gray-600 focus:outline-none focus:border-blue-500/40 transition-colors"
                             />
                             <button className="px-5 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-500 hover:to-purple-500 transition-all whitespace-nowrap">
                                 Subscribe
@@ -1435,7 +1455,7 @@
         // ========================================
         const App = () => {
             return (
-                <div className="relative min-h-screen bg-[#04040d]">
+                <div className="relative min-h-screen bg-deep">
                     <ParticleCanvas />
                     <FloatingOrbs />
                     <MouseGlow />
